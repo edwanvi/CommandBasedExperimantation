@@ -26,29 +26,18 @@ void Drive::Execute()
 	float leftThrottle = oi->GetLeftJoystick();
 	float rightThrottle = oi->GetRightJoystick();
 
-
-
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
-
-	if ( oi->GetLeftTrigger())
-		{
+	if ( oi->GetLeftTrigger()){
 		strafe_axis = oi->GetLeftTrigger();
-
-		}
-
-
-	else if ( oi->GetRightTrigger())
-			{
-			strafe_axis = -1 * oi->GetRightTrigger();
-
-			}
-	else
-			{
-				strafe_axis = 0;
-			}
-		CommandBase::driveTrain->_Strafe( strafe_axis);
-
+	}
+	else if ( oi->GetRightTrigger()){
+		strafe_axis = -1 * oi->GetRightTrigger();
+	}
+	else {
+		strafe_axis = 0;
+	}
+	CommandBase::driveTrain->_Strafe( strafe_axis);
 
 }
 

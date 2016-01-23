@@ -35,6 +35,7 @@ OI::OI() {
 	 * 2: Left Trigger
 	 * 3: Right Trigger
 	 * 5: Right Y Axis
+	 * 6: D-Pad
 	 */
 	rollerMode = 1;
 	buttonA = new JoystickButton(controller, 1);
@@ -83,6 +84,9 @@ OI::OI() {
 	buttonLB_2->WhenPressed(new Container_Holder(true));
 	buttonRB_2->WhenPressed(new Container_Holder(false));
 
+	buttonLB->WhenPressed(new Container_Holder(true));
+	buttonRB->WhenPressed(new Container_Holder(false));
+
 	//buttonStart_2->WhenPressed(new void isSensorTripped());
 }
 
@@ -100,6 +104,9 @@ float OI::GetLeftTrigger() {
 
 float OI::GetRightTrigger() {
 	return controller->GetRawAxis(3);
+}
+float OI::GetDPad() {
+	return controller->GetRawAxis(6);
 }
 float OI::GetLeftTrigger_2() {
 	return controller_2->GetRawAxis(2);
