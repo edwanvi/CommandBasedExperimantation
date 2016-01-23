@@ -20,14 +20,12 @@ void Container_Holder::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void Container_Holder::Execute()
 {
-	if(Open)
-		{
-			CommandBase::lift->H_Sol_Off();
-		}
-		else
-		{
-			CommandBase::lift->H_Sol_Set();
-		}
+	if(Open){
+		CommandBase::lift->H_Sol_Off();
+	}
+	else{
+		CommandBase::lift->H_Sol_Set();
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////

@@ -1,14 +1,12 @@
 #include "Drive.h"
 
-
-
 Drive::Drive()
 {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis)
 	Requires(CommandBase::driveTrain);
+	Requires(CommandBase::lift);
 	strafe_axis = 0;
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -25,6 +23,7 @@ void Drive::Execute()
 {
 	float leftThrottle = oi->GetLeftJoystick();
 	float rightThrottle = oi->GetRightJoystick();
+	float dpadpos = oi->GetDPad();
 
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
@@ -38,7 +37,12 @@ void Drive::Execute()
 		strafe_axis = 0;
 	}
 	CommandBase::driveTrain->_Strafe( strafe_axis);
-
+	if (dpadpos == 0){
+		CommandBase::lift->H_Sol_Set();
+	}
+	else if (dpadpos == 180) {
+		CommandBase::lift->H_Sol_Off();
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////

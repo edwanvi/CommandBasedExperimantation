@@ -84,9 +84,6 @@ OI::OI() {
 	buttonLB_2->WhenPressed(new Container_Holder(true));
 	buttonRB_2->WhenPressed(new Container_Holder(false));
 
-	buttonLB->WhenPressed(new Container_Holder(true));
-	buttonRB->WhenPressed(new Container_Holder(false));
-
 	//buttonStart_2->WhenPressed(new void isSensorTripped());
 }
 
@@ -132,7 +129,6 @@ int OI::Auto(){
 void OI::SetAuto(int _mode){
 	rollerMode = _mode;
 }
-
 /*#include "OI.h"
  #include "Commands/Print.h"
  #include "Commands/Drive.h"
