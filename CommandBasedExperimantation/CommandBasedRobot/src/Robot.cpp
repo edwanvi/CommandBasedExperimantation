@@ -40,8 +40,6 @@ private:
 		autonomousSequence = (Command*)chooser->GetSelected();
 		if (autonomousSequence != NULL)
 			autonomousSequence->Start();
-
-
 	}
 
 	void AutonomousPeriodic() {
