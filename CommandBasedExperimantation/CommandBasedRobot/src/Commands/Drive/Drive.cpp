@@ -38,12 +38,6 @@ void Drive::Execute()
 		strafe_axis = 0;
 	}
 	CommandBase::driveTrain->_Strafe( strafe_axis);
-	if (dpadpos == 0){
-		new Container_Holder(true);
-	}
-	else if (dpadpos == 180) {
-		new Container_Holder(false);
-	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
