@@ -35,7 +35,6 @@ OI::OI() {
 	 * 2: Left Trigger
 	 * 3: Right Trigger
 	 * 5: Right Y Axis
-	 * 6: D-Pad
 	 */
 	rollerMode = 1;
 	buttonA = new JoystickButton(controller, 1);
