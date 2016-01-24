@@ -1,4 +1,5 @@
 #include "Drive.h"
+#include "../Container_Holder.h"
 
 Drive::Drive()
 {
@@ -23,7 +24,7 @@ void Drive::Execute()
 {
 	float leftThrottle = oi->GetLeftJoystick();
 	float rightThrottle = oi->GetRightJoystick();
-	float dpadpos = oi->GetDPad();
+	int dpadpos = oi->GetDPad();
 
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
@@ -38,10 +39,10 @@ void Drive::Execute()
 	}
 	CommandBase::driveTrain->_Strafe( strafe_axis);
 	if (dpadpos == 0){
-		CommandBase::lift->H_Sol_Set();
+		new Container_Holder(true);
 	}
 	else if (dpadpos == 180) {
-		CommandBase::lift->H_Sol_Off();
+		new Container_Holder(false);
 	}
 }
 
