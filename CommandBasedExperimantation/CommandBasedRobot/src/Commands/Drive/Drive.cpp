@@ -6,7 +6,6 @@ Drive::Drive()
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis)
 	Requires(CommandBase::driveTrain);
-	Requires(CommandBase::lift);
 	strafe_axis = 0;
 }
 
@@ -24,6 +23,7 @@ void Drive::Execute()
 {
 	float leftThrottle = oi->GetLeftJoystick();
 	float rightThrottle = oi->GetRightJoystick();
+	int dpad = oi->GetDPad();
 
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
@@ -32,6 +32,18 @@ void Drive::Execute()
 	}
 	else if ( oi->GetRightTrigger()){
 		strafe_axis = -1 * oi->GetRightTrigger();
+	}
+	if (dpad == 0){
+		CommandBase::driveTrain->TankDrive(-0.5, 0.5);
+	}
+	else if (dpad == 180){
+		CommandBase::driveTrain->TankDrive(0.5, -0.5);
+	}
+	else if (dpad == 90){
+		CommandBase::driveTrain->TankDrive(-0.5, -0.5);
+	}
+	else if (dpad == 270){
+		CommandBase::driveTrain->TankDrive(0.5, 0.5);
 	}
 	else {
 		strafe_axis = 0;

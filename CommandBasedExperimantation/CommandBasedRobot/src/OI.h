@@ -15,6 +15,7 @@ public:
 	float GetRightJoystick();
 	float GetLeftTrigger();
 	float GetRightTrigger();
+	float GetLeftJoystick_2();
 	int GetDPad();
 	float GetLeftTrigger_2();
 	float GetRightTrigger_2();
