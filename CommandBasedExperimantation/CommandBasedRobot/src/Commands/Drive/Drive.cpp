@@ -33,6 +33,11 @@ void Drive::Execute()
 	else if ( oi->GetRightTrigger()){
 		strafe_axis = -1 * oi->GetRightTrigger();
 	}
+	else {
+		strafe_axis = 0;
+	}
+	CommandBase::driveTrain->_Strafe( strafe_axis);
+	//dpad steering
 	if (dpad == 0){
 		CommandBase::driveTrain->TankDrive(-0.5, 0.5);
 	}
@@ -45,10 +50,6 @@ void Drive::Execute()
 	else if (dpad == 270){
 		CommandBase::driveTrain->TankDrive(0.5, 0.5);
 	}
-	else {
-		strafe_axis = 0;
-	}
-	CommandBase::driveTrain->_Strafe( strafe_axis);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////

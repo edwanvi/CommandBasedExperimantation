@@ -24,16 +24,13 @@ void Lifting::Initialize()
 void Lifting::Execute()
 {
 
-	if(oi->GetRightTrigger_2() > .25)
-	{
+	if(oi->GetRightTrigger_2() > .25) {
 		magnitude_lift = oi->GetRightTrigger_2()+ 0.02;
 	}
-	else if (oi->GetLeftTrigger_2() > .25)
-	{
+	else if (oi->GetLeftTrigger_2() > .25) {
 		magnitude_lift = -oi->GetLeftTrigger_2();
 	}
-	else
-	{
+	else {
 		magnitude_lift = 0;
 	}
 
