@@ -94,10 +94,7 @@ void Lift::move(float magnitude) {
 	SmartDashboard::PutBoolean("Bottom Limit",limit);
 }
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////
-
 
 void Lift::ChangeMode(bool fast){
 	mode = fast;
@@ -272,34 +269,17 @@ if(toteIn == true)
 /*if (topVoltage >= 3)
 {
 	SmartDashboard::PutBoolean("locationwehf",location);
-	if(location == true)
-	{
-		if(topVoltage >= 3)
-
-		{
+	if(location == true) {
+		if(topVoltage >= 3) {
 			move (0.7);
 				Wait(0.2);
 					move (0.0);
 		}
 
-
-
-
-	else
-	{
+	else {
 		location = true;
 		move (-0.7);
 		Wait(0.2);
 		move (0.0);
 
 	}*/
-
-
-
-
-
-
-
-
-
-
