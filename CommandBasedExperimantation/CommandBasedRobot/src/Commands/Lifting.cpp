@@ -2,9 +2,7 @@
 
 
 
-Lifting::Lifting()
-{
-
+Lifting::Lifting() {
 	magnitude_lift = 0;
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis)
@@ -23,7 +21,7 @@ void Lifting::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void Lifting::Execute()
 {
-
+	int dpad = oi->GetDPad();
 	if(oi->GetRightTrigger_2() > .25) {
 		magnitude_lift = oi->GetRightTrigger_2()+ 0.02;
 	}
@@ -33,7 +31,13 @@ void Lifting::Execute()
 	else {
 		magnitude_lift = 0;
 	}
-
+	//experimental d-pad lift. speed is constant.
+	if (dpad == 0){
+		magnitude_lift = 0.25;
+	}
+	if (dpad == 180){
+		magnitude_lift = -0.25;
+	}
 	//opens rollers if lifting up
 
 	CommandBase::lift->move(magnitude_lift);

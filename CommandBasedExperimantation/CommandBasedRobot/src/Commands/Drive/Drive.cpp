@@ -23,7 +23,7 @@ void Drive::Execute()
 {
 	float leftThrottle = oi->GetLeftJoystick();
 	float rightThrottle = oi->GetRightJoystick();
-	int dpad = oi->GetDPad();
+	int dpad = oi->GetDPad_2();
 
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
