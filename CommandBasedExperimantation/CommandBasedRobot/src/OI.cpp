@@ -110,7 +110,7 @@ float OI::GetRightTrigger() {
 	return controller->GetRawAxis(3);
 }
 int OI::GetDPad() {
-	return controller->GetPOV();
+	return controller_2->GetPOV();
 }
 float OI::GetLeftTrigger_2() {
 	return controller_2->GetRawAxis(2);
