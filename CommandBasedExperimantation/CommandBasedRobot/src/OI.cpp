@@ -98,6 +98,10 @@ float OI::GetLeftJoystick_2(){
 	return -1 * controller_2->GetRawAxis(1);
 }
 
+float OI::GetRightJoystick_2(){
+	return -1 * controller_2->GetRawAxis(5);
+}
+
 float OI::GetLeftTrigger() {
 	return controller->GetRawAxis(2);
 }
