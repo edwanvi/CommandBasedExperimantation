@@ -33,10 +33,10 @@ void Lifting::Execute()
 	}
 	//experimental d-pad lift. speed is constant.
 	if (dpad == 0){
-		magnitude_lift = 0.25;
+		magnitude_lift = 0.5;
 	}
 	if (dpad == 180){
-		magnitude_lift = -0.25;
+		magnitude_lift = -0.5;
 	}
 	//opens rollers if lifting up
 
