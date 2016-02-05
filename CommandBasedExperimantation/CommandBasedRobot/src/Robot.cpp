@@ -3,6 +3,7 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "CommandBase.h"
+#include "RobotMap.h"
 #include "OI.h"
 #include "Commands/Rollers/Set_Roller.h"
 #include "Commands/Autonomous/Idiot_Lift.h"
@@ -27,9 +28,7 @@ private:
 		chooser->AddObject("Auto 4",new Autonomous_Sequences(4));
 		chooser->AddObject("Auto 5", new Autonomous_Sequences(5));
 
-
 		SmartDashboard::PutData("Auto Modes",chooser);
-
 	}
 
 	void DisabledPeriodic() {

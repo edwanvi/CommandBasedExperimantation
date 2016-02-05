@@ -2,7 +2,7 @@
 #include "../RobotMap.h"
 #include "../Commands/Lifting.h"
 #include <math.h>
-#include "CommandBase.h"
+//#include "CommandBase.h"
 
 
 
@@ -61,7 +61,6 @@ void Lift::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
 	SetDefaultCommand(new Lifting());
-	SmartDashboard::PutBoolean("is it workin?",false);
 }
 
 
