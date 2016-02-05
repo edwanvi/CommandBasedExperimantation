@@ -1,12 +1,10 @@
 #include "Lifting.h"
 
 
-
 Lifting::Lifting() {
 	magnitude_lift = 0;
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis)
-
 	Requires(CommandBase::lift);
 }
 
