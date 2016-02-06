@@ -8,7 +8,6 @@
 class Drive: public CommandBase
 {
 public:
-	LiveWindow *lw;
 	Drive();
 	void Initialize();
 	void Execute();
@@ -17,7 +16,6 @@ public:
 	void Interrupted();
 	float strafe_axis;
 private:
-	AnalogInput* top_optical_sensor;
 };
 
 #endif
