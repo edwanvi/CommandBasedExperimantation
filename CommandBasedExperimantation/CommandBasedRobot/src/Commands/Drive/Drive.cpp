@@ -15,6 +15,7 @@ Drive::Drive()
 // Called just before this Command runs the first time
 void Drive::Initialize()
 {
+	SmartDashboard::init();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +28,6 @@ void Drive::Execute()
 	int dpad = oi->GetDPad_2();
 
 
-	SmartDashboard::init();
 	lw = LiveWindow::GetInstance();
 	top_optical_sensor = new AnalogInput(Top_Sensor);
 	SmartDashboard::PutData("Top Sensor", top_optical_sensor);

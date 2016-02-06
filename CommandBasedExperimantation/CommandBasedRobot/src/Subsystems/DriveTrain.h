@@ -21,6 +21,7 @@ class DriveTrain: public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
+	AnalogInput* top_optical_sensor;
 	CANTalon* talonLeftMaster;
 	CANTalon* talonLeftFollowerA;
 	CANTalon* talon_strafe;
