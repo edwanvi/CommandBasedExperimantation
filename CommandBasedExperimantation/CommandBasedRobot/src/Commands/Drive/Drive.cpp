@@ -26,12 +26,11 @@ void Drive::Execute()
 	float rightThrottle = oi->GetRightJoystick();
 	int dpad = oi->GetDPad_2();
 
-	left_ir = new AnalogInput(LEFT_IR);
-	right_ir = new AnalogInput(RIGHT_IR);
+
 	SmartDashboard::init();
 	lw = LiveWindow::GetInstance();
-	SmartDashboard::PutData("Left IR", left_ir);
-	SmartDashboard::PutData("Right IR", right_ir);
+	top_optical_sensor = new AnalogInput(Top_Sensor);
+	SmartDashboard::PutData("Top Sensor", top_optical_sensor);
 
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 

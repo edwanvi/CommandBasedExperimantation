@@ -17,8 +17,7 @@ public:
 	void Interrupted();
 	float strafe_axis;
 private:
-	AnalogInput* left_ir;
-	AnalogInput* right_ir;
+	AnalogInput* top_optical_sensor;
 };
 
 #endif
