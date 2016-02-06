@@ -1,6 +1,7 @@
 #include"Commands/Autonomous/Autonomous_Roller.h"
 #include <Commands/Autonomous/Autonomous_Sequences.h>
 #include "Subsystems/DriveTrain.h"
+#include "Subsystems/Lift.h"
 #include "Commands/Autonomous/Autonomous_Move.h"
 #include "Commands/Drive/ShiftGear.h"
 #include "Idiot_Lift.h"
@@ -138,35 +139,12 @@ SmartDashboard::PutBoolean("Auto1 State",one);
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
-//Grab tote and container and line up to feeder station
+//Grab 2 totes and lift them
 void Autonomous_Sequences::auto2() {
-/*	AddSequential(new Solenoid_Roller_Set(false));
-	AddSequential(new Autonomous_Roller(4));
-	AddSequential(new Autonomous_Move(0.95, 0.55));
-	AddSequential(new Solenoid_Roller_Set(true));
-	*/
-/*
-AddSequential(new Autonomous_Roller(1, 1));
-		AddSequential(new Container_Holder(false));
-		AddSequential(new ShiftGear(false));
-		AddSequential(new Idiot_Lift(2.3, true));
-		AddSequential(new Solenoid_Roller_Set(true));
-		AddSequential(new Autonomous_Move(0.40, 0.75));
-		AddSequential(new Clipperset(true));
-		//AddSequential(new Bottom_Lift());
-		//AddSequential(new Idiot_Lift(0.25, false));
-		//AddSequential(new Idiot_Lift(1.25, true));
-		//AddSequential(new Container_Holder(true));
-		//AddSequential(new Idiot_Lift(1.5, false));
-
-		//Turn and move into autozone
-		 AddSequential(new Turn(81, 0.65, true));
-		AddSequential(new Autonomous_Move(1.4, 1.0));
-
-		//SmartDashboard::PutBoolean("Auto2 State",two);
-
-*/
-	AddSequential(new Autonomous_Move(1, -0.5));
+	while (CommandBase::lift->frontVoltage > 1){
+		new Autonomous_Move(0.5, 0.5);
+	}
+	SmartDashboard::PutBoolean("Auto2 State",two);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////

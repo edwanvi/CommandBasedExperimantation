@@ -16,9 +16,6 @@ AnalogInput* rearSensor;
 AnalogInput* topSensor;
 
 //Rollers* roller;
-float frontVoltage;
-float rearVoltage;
-float topVoltage;
 bool location;
 bool closed;
 bool open;
@@ -60,6 +57,9 @@ public:
 	void isSensorTripped();
 	void setLocation();
 	LiveWindow *lw;
+	float frontVoltage;
+	float rearVoltage;
+	float topVoltage;
 };
 
 #endif
