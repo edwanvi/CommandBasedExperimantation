@@ -53,8 +53,6 @@ private:
 
 		if (autonomousSequence != NULL)
 			autonomousSequence->Cancel();
-
-
 	}
 
 	void TeleopPeriodic() {
