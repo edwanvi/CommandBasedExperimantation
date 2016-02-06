@@ -16,6 +16,8 @@ DriveTrain::DriveTrain() :
 	talonRightFollowerA = new CANTalon(RIGHT_MOTOR_FOLLOWER_A);
 	//talonRightFollowerB = new CANTalon(RIGHT_MOTOR_FOLLOWER_B);
 
+	top_optical_sensor = new AnalogInput(Top_Sensor);
+
 	talonLeftMaster->EnableControl();
 	talonRightMaster->EnableControl();
 
@@ -94,7 +96,6 @@ void DriveTrain::InitDefaultCommand() {
 ///////////////////////////////////////////////////////////////////////////////////////
 void DriveTrain::TankDrive(float leftAxis, float rightAxis) {
 	SmartDashboard::PutNumber("Position", GetPosition());
-	top_optical_sensor = new AnalogInput(Top_Sensor);
 	SmartDashboard::PutData("Top Sensor", top_optical_sensor);
 	if (cutPower == true) {
 		leftAxis /= 2;
