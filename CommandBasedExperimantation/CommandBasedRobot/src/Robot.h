@@ -27,8 +27,6 @@ public:
 	void TestPeriodic();
 
 private:
-	AnalogInput* left_ir;
-	AnalogInput* right_ir;
 };
 
 #endif /* SRC_ROBOT_H_ */

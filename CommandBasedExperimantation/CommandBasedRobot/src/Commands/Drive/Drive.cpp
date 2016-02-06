@@ -1,4 +1,5 @@
 #include "Drive.h"
+#include "../../RobotMap.h"
 #include "../Container_Holder.h"
 
 Drive::Drive()
@@ -24,6 +25,9 @@ void Drive::Execute()
 	float leftThrottle = oi->GetLeftJoystick();
 	float rightThrottle = oi->GetRightJoystick();
 	int dpad = oi->GetDPad_2();
+
+	left_ir = new AnalogInput(LEFT_IR);
+	right_ir = new AnalogInput(RIGHT_IR);
 
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
