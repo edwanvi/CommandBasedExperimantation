@@ -8,6 +8,7 @@
 class Drive: public CommandBase
 {
 public:
+	LiveWindow *lw;
 	Drive();
 	void Initialize();
 	void Execute();

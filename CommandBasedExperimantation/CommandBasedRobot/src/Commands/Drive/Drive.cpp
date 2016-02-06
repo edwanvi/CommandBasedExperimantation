@@ -28,6 +28,10 @@ void Drive::Execute()
 
 	left_ir = new AnalogInput(LEFT_IR);
 	right_ir = new AnalogInput(RIGHT_IR);
+	SmartDashboard::init();
+	lw = LiveWindow::GetInstance();
+	SmartDashboard::PutData("Left IR", left_ir);
+	SmartDashboard::PutData("Right IR", right_ir);
 
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
