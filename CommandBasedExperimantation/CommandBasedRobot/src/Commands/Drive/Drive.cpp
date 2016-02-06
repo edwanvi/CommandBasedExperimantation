@@ -27,11 +27,6 @@ void Drive::Execute()
 	float rightThrottle = oi->GetRightJoystick();
 	int dpad = oi->GetDPad_2();
 
-
-	lw = LiveWindow::GetInstance();
-	top_optical_sensor = new AnalogInput(Top_Sensor);
-	SmartDashboard::PutData("Top Sensor", top_optical_sensor);
-
 	CommandBase::driveTrain->TankDrive(leftThrottle, rightThrottle);
 
 	if ( oi->GetLeftTrigger()){
