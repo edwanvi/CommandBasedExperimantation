@@ -39,6 +39,9 @@ Lift::Lift() : Subsystem("Lift")
 	//rightVoltage = 0;
 	//leftVoltage = 0 ;
 
+	SmartDashboard::init();
+	lw = LiveWindow::GetInstance();
+
 	//leftMeters = 0.0;
 	//rightMeters = 0.0;
 
@@ -137,9 +140,6 @@ void Lift::H_Sol_Off() {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
-void Lift::PrintStuff(){
-
-}
 
 void Lift::isSensorTripped(){
 frontVoltage = frontSensor->GetVoltage();
@@ -154,6 +154,7 @@ if(rearVoltage <= 1){
 	SmartDashboard::PutBoolean("can go",true);
 
 }
+//CommandBase::lift->isSensorTripped
 else
 {
 	SmartDashboard::PutBoolean("can go",false);

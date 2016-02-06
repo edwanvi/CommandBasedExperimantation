@@ -23,7 +23,6 @@ void ChangeSpeed::Execute()
 {
 	CommandBase::lift->ChangeMode(mode);
 	//SmartDashboard::PutBoolean("is it workin?",true);
-	CommandBase::lift->PrintStuff();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////

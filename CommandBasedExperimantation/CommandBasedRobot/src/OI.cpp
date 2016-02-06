@@ -6,7 +6,7 @@
 #include "Commands/Lifting.h"
 #include "Commands/Rollers/Solenoid_Roller_Set.h"
 #include "Commands/Container_Holder.h"
-
+#include "Commands/HackSlashLiftSensor.h"
 #include "Commands/ResetEncoders.h"
 #include "Commands/Autonomous/Autonomous_Move.h"
 
@@ -83,7 +83,7 @@ OI::OI() {
 	buttonLB_2->WhenPressed(new Container_Holder(true));
 	buttonRB_2->WhenPressed(new Container_Holder(false));
 
-	//buttonStart_2->WhenPressed(new void isSensorTripped());
+	buttonStart_2->WhenPressed(new HackSlashLiftSensor());
 }
 
 float OI::GetLeftJoystick() {

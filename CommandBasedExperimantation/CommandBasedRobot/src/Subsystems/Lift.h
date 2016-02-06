@@ -56,13 +56,10 @@ public:
 	void L_Sol_Off();
 	void H_Sol_Set();
 	void H_Sol_Off();
-	void PrintStuff();
 	bool limit;
 	void isSensorTripped();
 	void setLocation();
-
-
-
+	LiveWindow *lw;
 };
 
 #endif
