@@ -140,16 +140,3 @@ int OI::Auto(){
 void OI::SetAuto(int _mode){
 	rollerMode = _mode;
 }
-/*#include "OI.h"
- #include "Commands/Print.h"
- #include "Commands/Drive.h"
-
- OI::OI()
- {
- // Process operator interface input here.
-
- controller = new Joystick(1);
-
-
- }
- */
